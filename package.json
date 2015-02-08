@@ -1,0 +1,49 @@
+{
+  "name": "nasdaq-companies",
+  "description": "data on NASDAQ-listed companies",
+  "version": "0.0.0-prerelease",
+  "author": {
+    "name": "Kyle E. Mitchell",
+    "email": "kyle@kemitchell.com",
+    "url": "http://kemitchell.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/kemitchell/nasdaq-companies.js/issues"
+  },
+  "devDependencies": {
+    "JSONStream": "^0.10.0",
+    "byline": "^4.2.1",
+    "chai": "^1.10.0",
+    "ftp": "^0.3.8",
+    "istanbul": "^0.3.5",
+    "jscs": "^1.10.0",
+    "jshint": "^2.6.0",
+    "jsonmin": "^0.1.0",
+    "mocha": "^2.1.0",
+    "through2": "^0.6.3",
+    "util-merge": "^1.0.0"
+  },
+  "homepage": "https://github.com/kemitchell/nasdaq-companies.js",
+  "keywords": [
+    "capital markets",
+    "companies",
+    "finance",
+    "securities",
+    "stock market"
+  ],
+  "license": "Apache-2.0",
+  "main": "source/index",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/commonform/nasdaq-companies.js.git"
+  },
+  "scripts": {
+    "build": "node build/build.js > data/data.json && jsonmin data/data.json",
+    "check": "check-versions --check-module",
+    "lint": "jshint source test && jscs source test",
+    "pre-commit": "npm run lint && npm run check && npm run test",
+    "prepublish": "npm run build && npm run pre-commit",
+    "test": "mocha",
+    "travis-ci": "npm run pre-commit"
+  }
+}
