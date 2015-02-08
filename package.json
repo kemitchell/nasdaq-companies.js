@@ -14,6 +14,7 @@
     "JSONStream": "^0.10.0",
     "byline": "^4.2.1",
     "chai": "^1.10.0",
+    "check-versions": "0.0.1",
     "ftp": "^0.3.8",
     "istanbul": "^0.3.5",
     "jscs": "^1.10.0",
